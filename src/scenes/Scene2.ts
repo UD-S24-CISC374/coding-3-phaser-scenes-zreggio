@@ -1,15 +1,15 @@
 import Phaser from "phaser";
 import { tickerUpdate, ticker } from "../objects/ticker";
 
-export default class MainScene extends Phaser.Scene {
+export default class Scene2 extends Phaser.Scene {
     tickerText?: Phaser.GameObjects.Text;
 
     constructor() {
-        super({ key: "MainScene" });
+        super({ key: "Scene2" });
     }
 
     create() {
-        this.add.image(400, 500, "image_1");
+        this.add.image(400, 500, "image_2");
         this.add.text(100, 200, "Hit Escape To Change Scenes", {
             fontSize: "40px",
             color: "#000",
@@ -27,7 +27,7 @@ export default class MainScene extends Phaser.Scene {
         if (escKey?.isDown) {
             tickerUpdate();
             this.tickerText?.setText(`Scene: ${ticker}`);
-            this.scene.start("Scene2");
+            this.scene.start("Scene3");
         }
     }
 }
